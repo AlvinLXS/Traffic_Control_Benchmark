@@ -331,9 +331,14 @@ def create_test_sumo_cfg(data_dir):
         filname = 'eval_sim_p%d_b%d'%(arg[0]*10, arg[1])
         sumo = SumoCfg(data_dir, filname, 3, 3, period=arg[0], binominal=arg[1])
         sumo.init()
-def generate_net_demand(data_dir):
-    xnum = 3
-    ynum = 3
+def generate_net_demand(data_dir,xnum=3,ynum=3):
+    """
+
+    :param data_dir: 生成文件的存储路径
+    :param xnum: 横向节点个数
+    :param ynum: 纵向节点个数
+    :return:
+    """
     file_name = str(xnum)+'X'+str(ynum)+'grid'
     sumo = SumoCfg(data_dir, file_name, xnum, ynum, period=1, binominal=1)
     sumo.init()
@@ -344,4 +349,4 @@ if __name__ == '__main__':
     data_dir = os.path.join(os.getcwd(), 'sumocfg')
     if not os.path.isdir(data_dir):
         os.makedirs(data_dir)
-    generate_net_demand(data_dir)
+    generate_net_demand(data_dir,5,5)
