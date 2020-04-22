@@ -1,0 +1,47 @@
+Loading net-file from 'F:\MoSTScenario-master\scenario\in/most.net.xml'... done (1113ms).
+Warning: At actuated tlLogic '146640', actuated phase 2 has no controlling detector
+Warning: At actuated tlLogic '148690', actuated phase 3 has no controlling detector
+Loading additional-files from 'F:\MoSTScenario-master\scenario\in/add/most.poly.xml'... done (500ms).
+Loading additional-files from 'F:\MoSTScenario-master\scenario\in/add/most.busstops.add.xml'... done (14ms).
+Loading additional-files from 'F:\MoSTScenario-master\scenario\in/add/most.trainstops.add.xml'... done (9ms).
+Loading additional-files from 'F:\MoSTScenario-master\scenario\in/add/most.parking.allvisible.add.xml'... done (56ms).
+Loading additional-files from 'F:\MoSTScenario-master\scenario\in/add/basic.vType.xml'... done (1ms).
+Loading done.
+Simulation started with time: 14400.00
+Warning: Person 'pedestrian_3-1_3261' is jammed on edge ':133313_w0', time=18994.50.
+Warning: pedestrian_1-1-pt_6131 at edge '152814#3' position 103.10 cannot use waiting vehicle 'bus_2:Monaco.5' at position 90.45 because it is too far away.
+Performance: 
+ Duration: 183988ms
+ Real time factor: 27.5466
+ UPS: 28261.022458
+Vehicles: 
+ Inserted: 2327 (Loaded: 2547)
+ Running: 1431
+ Waiting: 0
+Persons: 
+ Inserted: 2350
+ Running: 1144
+ Jammed: 1
+Statistics (avg):
+ RouteLength: 5498.50
+ Duration: 527.32
+ WaitingTime: 13.92
+ TimeLoss: 81.58
+ DepartDelay: 0.14
+Pedestrian Statistics (avg of 506 walks):
+ RouteLength: 238.36
+ Duration: 182.20
+ TimeLoss: 25.27
+Ride Statistics (avg of 953 rides):
+ WaitingTime: 6.70
+ RouteLength: 5261.97
+ Duration: 482.26
+ Bus: 45
+ Train: 0
+ Bike: 110
+ Aborted: 0
+
+DijkstraRouter answered 14057 queries and explored 13.20 edges on average.
+DijkstraRouter spent 97ms answering queries (0.01ms on average).
+DijkstraRouter answered 5282 queries and explored 1118.48 edges on average.
+DijkstraRouter spent 4854ms answering queries (0.92ms on average).
