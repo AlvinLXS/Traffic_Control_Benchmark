@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<configuration noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+  <input>
+    <net-file value="3X3grid.net.xml" />
+    <route-files value="3X3grid.rou.xml" />
+  <additional-files value="newTLS.add.xml" /></input>
+  <output>
+    <netstate-dump value="output/3X3grid_netstate.sumo.tr" />
+    <tripinfo-output value="output//3X3grid_tripinfo.xml" />
+    <vehroute-output value="output/3X3grid_vehroutes.xml" />
+    <queue-output value="output/3X3grid_queues.xml" />
+  </output>
+  <time>
+    <begin value="0" />
+    <end value="3600" />
+    <route-steps value="-1" />
+  </time>
+  <time-to-teleport value="-1" />
+</configuration>
