@@ -1,0 +1,10 @@
+luxembourg:
+  url: "https://github.com/lcodeca/LuSTScenario/archive/v2.0.tar.gz"
+  filename: "LuSTScenario-v2.0"
+  netfile: "scenario/lust.net.xml"
+
+monaco:
+  url: "https://github.com/lcodeca/MoSTScenario/archive/v0.6.tar.gz"
+  filename: "MoSTScenario-v0.6"
+  netfile: "scenario/in/most.net.xml"
+

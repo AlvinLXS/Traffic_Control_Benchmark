@@ -1,0 +1,27 @@
+Loading net-file from 'E:\Traffic_Control_Benchmark\sumocfg\Monaco\in/most.net.xml'... done (1171ms).
+Warning: At actuated tlLogic '146640', actuated phase 2 has no controlling detector
+Warning: At actuated tlLogic '148690', actuated phase 3 has no controlling detector
+Loading additional-files from 'E:\Traffic_Control_Benchmark\sumocfg\Monaco\in/add/most.poly.xml'... done (532ms).
+Loading additional-files from 'E:\Traffic_Control_Benchmark\sumocfg\Monaco\in/add/most.busstops.add.xml'... done (14ms).
+Loading additional-files from 'E:\Traffic_Control_Benchmark\sumocfg\Monaco\in/add/most.trainstops.add.xml'... done (10ms).
+Loading additional-files from 'E:\Traffic_Control_Benchmark\sumocfg\Monaco\in/add/most.parking.allvisible.add.xml'... done (56ms).
+Loading additional-files from 'E:\Traffic_Control_Benchmark\sumocfg\Monaco\in/add/basic.vType.xml'... done (2ms).
+Loading done.
+Performance: 
+ Duration: 134241ms
+ Real time factor: 0
+ UPS: 0.000000
+Vehicles: 
+ Inserted: 0 (Loaded: 2)
+ Running: 0
+ Waiting: 0
+Persons: 
+ Inserted: 1
+ Running: 0
+Statistics (avg):
+ RouteLength: 0.00
+ Duration: 0.00
+ WaitingTime: 0.00
+ TimeLoss: 0.00
+ DepartDelay: 0.00
+
