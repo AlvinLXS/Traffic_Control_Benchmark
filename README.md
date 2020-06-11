@@ -1,40 +1,102 @@
 # Traffic_Control_Benchmark
 Benchmark for traffic control algorithms
 
-## Implement the baseline method in SUMO
-1. To implement **fix** method in SUMO, run
-```
-python baseline_result.py --sumo_cfg [sumocfg_dir] fix --green-time [green_time]
-```
-`[sumocfg_dir]` is the directory of SUMO config file.
+## Datasets
 
-`[green_time]` is the duration of the green light of each traffic light.
+* Synthetic trafﬁc networks
 
-2. To implement **webster** method in SUMO, run
-```
-python baseline_result.py --sumo_cfg [sumocfg_dir] webster
-```
-`[sumocfg_dir]` is the directory of SUMO config file.
+| intersection channelization                                  | 1x1grid                                                      |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![1x1grid_intersection](/Users/Star/Desktop/Codes/github/Traffic_Control_Benchmark/images/1x1grid_intersection.png) | ![1x1grid_intersection](/Users/Star/Desktop/Codes/github/Traffic_Control_Benchmark/images/1x1grid_intersection.png) |
+| 3x3grid                                                      | 5x5grid                                                      |
+|                                                              |                                                              |
 
-3. To implement **actuated** method in SUMO, run
-```
-python baseline_result.py --sumo_cfg [sumocfg_dir] actuated --minDur [minDur] --maxDur [maxDur]
-```
-`[sumocfg_dir]` is the directory of SUMO config file.
+* Real traffic networks
 
-`[minDur]` is the minimum duration of green light for each phase of each traffic light.
+|              Luxembourg              |            Monaco            |
+| :--------------------------------- | :------------------------- |
+| ![luxembourg](images/luxembourg.png) | ![monaco](images/monaco.png) |
+|             **TAPASCologne**             |            **Malaga**            |
+|                                      |                              |
+| **Hefei** | |
+| | |
 
-`[maxDur]` is the maximum duration of green light for each phase of each traffic light.
+## Traffic Control Methods
+| Controllers              | Introduction                                                 |
+| ------------------------ | :----------------------------------------------------------- |
+| Webster's method         | Webster’s method of traffic signal design is an analytical approach of determining the optimum signal cycle time, corresponding to minimum total delay to all the vehicles at the approach roads of the intersection. |
+| Actuated traffic control | An actuated traffic signal controller determines the timing and even the sequence of traffic movement for each phase and cycle, based on what vehicles or pedestrians are detected at the intersection. |
 
-## Parse the tripinfo file and plot the result
-To parse the tripinfo file and plot the result, run
+## Controllers comparison
+
+| Networks     | Comparasion results                                                        |
+| ------------ | -------------------------------------------------------------------------- |
+| 3x3grid      | ![controllers_comparison](images/controllers_comparison_3x3grid.png)               |
+| 5x5grid      | ![controllers_comparison](images/controllers_comparison_5x5grid.png)       |
+| Luxembourg   |                                                                            |
+| Monaco       | ![controllers_comparison monaco](images/controllers_comparison_monaco.png) |
+| TAPASCologne |                                                                            |
+| Malaga       |                                                                            |
+
+
+
+## Quick Start
+
+###Build the sumofile of grid traffic networks
+
+```bash
+python3 gen_net_demand.py 
 ```
+
+### Build the sumofile of real traffic scenarios
+
+```bash
+python3 utils/build_nets --netname [netname1] [netname1]
+```
+
+For example, to build Luxembourg and Monaco sumofiles for experiments: 
+
+```bash
+python3 utils/build_nets --netname Luxembourg Monaco
+```
+
+###  Implement baseline methods in SUMO
+
+* To implement Webster's method in SUMO: 
+
+  ```bash
+  python baseline_result.py --sumo_cfg [sumocfg_dir] webster
+  ```
+
+* To implement actuated traffic controller method in SUMO: 
+
+  ```bash
+  python baseline_result.py --sumo_cfg [sumocfg_dir] actuated --minDur [minDur] --maxDur [maxDur]
+  ```
+
+### Compare different control methods
+
+```bash
 python result_plot.py --method_1 [name_of_method_1] --tripinfo_dir_1 [tripinfo_dir_1] --method_2 [name_of_method_2] --tripinfo_dir_2 [tripinfo_dir_2]
 ```
-`[name_of_method_1]` and `[name_of_method_1]` are the names of method 1 and method 2 respectively.
 
-`[tripinfo_dir_1]` and `[tripinfo_dir_2]` are the directories of the tripinfo file of method 1 and method 2 respectively.
 
-Below is an example:
 
-![](./result_plot.png)
+## References
+
+### Datasets
+
+* [Sumo Data/Scenarios](https://sumo.dlr.de/docs/Data/Scenarios.html#monaco_sumo_traffic_most)
+* Daniel H. Stolfi and Enrique Alba. Generating Realistic Urban Traffic Flows with Evolutionary Techniques. In: *Engineering Applications of Artificial Intelligence*, vol. 75, pp. 36-47, 2018. [[Project](https://en.danielstolfi.com/fga/index.php)]
+
+### Control Methods
+
+* Webster
+
+* Actuated controller
+
+  
+
+## License
+
+This work is released under the MIT license.
